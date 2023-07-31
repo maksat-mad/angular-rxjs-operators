@@ -1,0 +1,23 @@
+<a routerLink="/">go to main</a>
+<br>
+<button (click)="dispatchOrder()">Order Durum</button>
+<hr>
+<button (click)="_flatBread.next('flat bread')">Add flat bread</button>
+<button (click)="_meat.next('meat')">Add meat</button>
+<button (click)="_souse.next('souse')">Add souse</button>
+<button (click)="_tomato.next('tomato')">Add tomato</button>
+<button (click)="_cabbage.next('cabbage')">Add cabbage</button>
+
+<!-- <ng-container *ngIf="durum$ | async as durum">
+  <section *ngIf="durum.length > 0">
+    <p>Ingredients:</p>
+    <pre>{{ durum | json }}</pre>
+  </section>
+</ng-container> -->
+
+<ng-container *ngIf="delivery$ | async as product">
+  <section *ngIf="product.product">
+    <p>Ingredients:</p>
+    <pre>{{ product | json }}</pre>
+  </section>
+</ng-container>
